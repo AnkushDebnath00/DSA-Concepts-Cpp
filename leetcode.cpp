@@ -164,6 +164,28 @@ void leetcode88(vector<int> nums1, int m, vector<int> nums2, int n)
     nums1 = arr;
 }
 
+int leetcode204(int n)
+// Given an integer n, return the number of prime numbers that are strictly less than n.
+{
+    // Sieve of Eratosthenes Algorithm
+    // Time Complexity: O(n*log(log(n)))
+    int count = 0;
+    vector<bool> prime(n + 1, 1);
+    prime[0] = prime[1] = 0;
+    for (int i = 2; i < n; i++)
+    {
+        if (prime[i])
+        {
+            count++;
+            for (int j = i * 2; j < n; j += i)
+            {
+                prime[j] = 0;
+            }
+        }
+    }
+    return count;
+}
+
 int main()
 {
     // int n;
@@ -179,4 +201,5 @@ int main()
     cout << "Can represent Power of Two?: " << leetcode231(n) << endl;
     // cout << "Number of occurrences of each value in the array [ 1, 1, 1, 2, 2, 3 ] is unique: " << leetcode1207(arr, 6) << endl;
     cout << "Highest value of the Mountain Array: " << leetcode852(vctr) << endl;
+    cout << "Number of Prime Numbers: " << leetcode204(n) << endl;
 }
