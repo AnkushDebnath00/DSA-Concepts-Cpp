@@ -66,7 +66,7 @@ int gcd(int a, int b)
 int lcm(int a, int b)
 {
     // Time Complexity: O(log(min(a,b)))
-    return lcm(a*b, gcd(a,b)));
+    return (a * b) / gcd(a, b);
 }
 
 int main()
