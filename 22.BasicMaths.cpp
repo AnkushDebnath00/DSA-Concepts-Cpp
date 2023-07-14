@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 bool isPrime(int n)
@@ -39,7 +40,7 @@ int countPrimesOptimized(int n)
         if (prime[i])
         {
             count++;
-            for (int j = i * 2; j < n; j += i)
+            for (unsigned int j = i * i; j < n; j += i)
             {
                 prime[j] = 0;
             }
@@ -48,12 +49,36 @@ int countPrimesOptimized(int n)
     return count;
 }
 
+int countPrimesMoreOptimized(int n)
+{
+    // SEGMENTED SIEVE
+    return 0;
+}
+
+int gcd(int a, int b)
+{
+    // EUCLID'S ALGORITHM
+    // Time Complexity: O(log(min(a,b)))
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+int lcm(int a, int b)
+{
+    // Time Complexity: O(log(min(a,b)))
+    return lcm(a*b, gcd(a,b)));
+}
+
 int main()
 {
-    int n;
-    cout << "Enter the number: ";
+    int m, n;
+    cout << "Enter the 2 numbers: ";
+    cin >> m;
     cin >> n;
     cout << "is Prime? " << isPrime(n) << endl;
     cout << "Number of primes: " << countPrimes(n) << endl;
     cout << "Number of primes: " << countPrimesOptimized(n) << endl;
+    cout << "Number of primes: " << countPrimesMoreOptimized(n) << endl;
+    cout << "Greatest Common Dividend: " << gcd(m, n) << endl;
+    cout << "Least Common Multiple: " << lcm(m, n) << endl;
 }
