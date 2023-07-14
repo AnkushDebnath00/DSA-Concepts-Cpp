@@ -23,6 +23,6 @@ int main()
     // pointer to pointer
     int **r = &p;
     cout << "value of r: " << r << endl;
-    cout << "value of r (as a pointer of pointer): " << **r << endl;
     cout << "value of r (as a pointer): " << *r << endl;
+    cout << "value of r (as a pointer of pointer): " << **r << endl;
 }
