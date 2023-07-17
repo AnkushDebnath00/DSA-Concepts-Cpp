@@ -43,5 +43,10 @@ int main()
     // content of symbol table cannot be changed
     // int a = 10; // error: redefinition of 'int a'
     // arr = arr + 1; // error: assignment of read-only variable 'arr'
-    
+
+    // character arrays
+    char c[6] = "hello"; // One extra for null character
+    char *d = c;
+    cout << "the whole character array = " << d << endl; // cout function will print till it sees null character
+    cout << "value of first element of Array (c[0]) = " << *d << endl;
 }
