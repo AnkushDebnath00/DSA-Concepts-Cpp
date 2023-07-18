@@ -1,11 +1,24 @@
 #include <iostream>
 using namespace std;
 
-int update(int *u)
+void update(int **v)
 {
-    *u = 20; // this will update the value of x
-    u++;     // but this will not update the value of u
-    return *u;
+    **v = 20;    // this will update the value of x
+    *v = *v + 1; // this will update the value of u outside the scope
+    v++;         // this will not update the value of v outside the scope
+}
+
+int getsum(int *arr, int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += arr[i]; // arr[i] = *(arr + i) = i[arr]
+        // or,
+        // sum += *arr;
+        // arr++;
+    }
+    return sum;
 }
 
 int main()
@@ -64,7 +77,16 @@ int main()
     // updating value with a function
     int x = 10;
     int *u = &x;
+    int **v = &u;
     cout << "value of x before update function = " << x << endl;
-    update(u); // update function updates the value of x
+    cout << "value of u before update function = " << u << endl;
+    cout << "value of v before update function = " << v << endl;
+    update(v); // update function updates the value of x
     cout << "value of x after update function = " << x << endl;
+    cout << "value of u after update function = " << u << endl;
+    cout << "value of v after update function = " << v << endl;
+
+    // Get sum of array elements
+    cout << "Sum of array elements = " << getsum(arr, sizeof(arr) / sizeof(arr[0])) << endl;        // 11 + 22 + 33 + 44 + 55
+    cout << "Sum of array segment = " << getsum(arr + 3, sizeof(arr) / sizeof(arr[0]) - 3) << endl; // 44 + 55
 }
