@@ -1,6 +1,13 @@
 #include <iostream>
 using namespace std;
 
+int update(int *u)
+{
+    *u = 20; // this will update the value of x
+    u++;     // but this will not update the value of u
+    return *u;
+}
+
 int main()
 {
     // Symbol Table is an important data structure created and maintained by the compiler in order to keep track of semantics of variables i.e. it stores information about the scope and binding information about names, information about instances of various entities such as variable and function names, classes, objects, etc.
@@ -45,8 +52,19 @@ int main()
     // arr = arr + 1; // error: assignment of read-only variable 'arr'
 
     // character arrays
-    char c[6] = "hello"; // One extra for null character
+    char c[6] = "world"; // One extra for null character
     char *d = c;
     cout << "the whole character array = " << d << endl; // cout function will print till it sees null character
     cout << "value of first element of Array (c[0]) = " << *d << endl;
+
+    char c1 = 'Z';
+    char *d1 = &c1;
+    cout << "character = " << d1 << endl; // prints a, but doesnt stop until null character
+
+    // updating value with a function
+    int x = 10;
+    int *u = &x;
+    cout << "value of x before update function = " << x << endl;
+    update(u); // update function updates the value of x
+    cout << "value of x after update function = " << x << endl;
 }
