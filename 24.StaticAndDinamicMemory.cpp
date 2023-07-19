@@ -3,5 +3,9 @@ using namespace std;
 
 int main()
 {
-    cout << "Nothing Yet!";
+    // Create a reference variable
+    int x = 10;
+    int &ref = x;
+    cout << "x = " << x << endl;
+    cout << "ref = " << ref << endl;
 }
