@@ -89,4 +89,17 @@ int main()
     // Get sum of array elements
     cout << "Sum of array elements = " << getsum(arr, sizeof(arr) / sizeof(arr[0])) << endl;        // 11 + 22 + 33 + 44 + 55
     cout << "Sum of array segment = " << getsum(arr + 3, sizeof(arr) / sizeof(arr[0]) - 3) << endl; // 44 + 55
+
+    // void pointer
+    void *ptr;
+    int x1 = 10;
+    ptr = &x1;
+    cout << "value of x1 = " << x1 << endl;
+    cout << "value of ptr = " << ptr << endl;
+    cout << "value of ptr (as a pointer) = " << *(int *)ptr << endl; // typecasting void pointer to int pointer
+
+    // address typecasting
+    int *ptr1 = (int *)0x7ffeeb7b0a3c;
+    cout << "value of ptr1 = " << ptr1 << endl;
+    cout << "value of ptr1 (as a pointer) = " << *ptr1 << endl;
 }
