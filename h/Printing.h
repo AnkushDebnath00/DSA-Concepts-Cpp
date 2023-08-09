@@ -13,6 +13,16 @@ void printVector(vector<int> arr)
     }
     cout << endl;
 }
+void printCharVector(vector<char> arr)
+{
+    cout << "[";
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cout << arr[i];
+        i != arr.size() - 1 ? cout << ", " : cout << "]";
+    }
+    cout << endl;
+}
 void printPair(pair<int, int> arr)
 {
     cout << arr.first << " " << arr.second << endl;
