@@ -74,16 +74,13 @@ char getMaxOccuringChar(string s)
             arr[s[i] + 'a' - 'A']++;
         }
     }
-    int maxVal = 0, res = 0;
+    int maxIndex = 0;
     for (int i = 0; i < 26; i++)
     {
-        if (arr[i] > maxVal)
-        {
-            maxVal = arr[i];
-            res = i;
-        }
+        if (arr[i] > arr[maxIndex])
+            maxIndex = i;
     }
-    return (res + 'a');
+    return (maxIndex + 'a');
 }
 
 int main()
