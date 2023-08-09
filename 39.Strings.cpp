@@ -85,6 +85,12 @@ char getMaxOccuringChar(string s)
 
 int main()
 {
+
+    // String Operations
+    string s;
+    getline(cin, s); // getline(cin, s) is used to take input of a string with spaces
+    cout << s << endl;
+
     string str = "A man, a plan, a canal: Panama";
     string str2 = "  hello world  ";
     string str3 = "testsample"; // e
