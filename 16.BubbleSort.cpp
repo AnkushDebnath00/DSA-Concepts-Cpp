@@ -3,8 +3,6 @@
 #include <iostream>
 #include <vector>
 #include <utility>
-#include <cmath>
-#include <math.h>
 #include <C:\Users\Ankus\OneDrive\Documents\C++\h\Searching.h>
 #include <C:\Users\Ankus\OneDrive\Documents\C++\h\Printing.h>
 using namespace std;

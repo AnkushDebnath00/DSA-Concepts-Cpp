@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 void printArray(int arr[], int size)

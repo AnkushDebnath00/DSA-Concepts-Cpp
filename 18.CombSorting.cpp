@@ -28,16 +28,16 @@ vector<int> combSort(vector<int> arr)
         temp = gap;
         for (; gap > 0; gap--)
         {
-            cout << "i = " << i << ", gap = " << gap << endl;
+            // cout << "i = " << i << ", gap = " << gap << endl;
             if (arr[i] > arr[i + gap])
             {
                 swap(arr[i], arr[i + gap]);
-                cout << "arr = ";
-                printVector(arr);
+                // cout << "arr = ";
+                // printVector(arr);
             }
         }
         gap = temp - 1;
-        cout << ":::" << endl;
+        // cout << ":::" << endl;
     }
     return arr;
 }
