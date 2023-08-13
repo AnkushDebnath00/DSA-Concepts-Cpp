@@ -50,6 +50,7 @@
     "deque": "cpp",
     "xlocmon": "cpp",
     "xloctime": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "algorithm": "cpp"
   }
 }
