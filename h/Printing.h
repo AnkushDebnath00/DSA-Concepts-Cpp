@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include <string>
 using namespace std;
 
 void printVector(vector<int> arr)
@@ -62,5 +63,18 @@ void print2DVector(vector<vector<int>> arr)
         }
         cout << endl;
     }
+    cout << endl;
+}
+void printVectorString(vector<string> strVector)
+{
+    for (int i = 0; i < strVector.size(); i++)
+        cout << strVector[i] << endl;
+    cout << endl;
+}
+
+void printVectorSet(set<int> s)
+{
+    for (auto it = s.begin(); it != s.end(); it++)
+        cout << *it << endl;
     cout << endl;
 }
